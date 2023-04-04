@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+
+#ifndef IncomeClassH
+#define IncomeClassH
+#include <vcl.h>
+//---------------------------------------------------------------------------
+#endif
+
+class Income
+{
+	public:
+	String Category;
+	String Name;
+	String Sum;
+	TDateTime Date;
+	String Comment;
+    Income* Sort1(Income* Arr, int size);
+};

@@ -1,0 +1,41 @@
+//---------------------------------------------------------------------------
+
+#ifndef SearchExpenseH
+#define SearchExpenseH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Grids.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TFindExpense : public TForm
+{
+__published:	// IDE-managed Components
+	TStringGrid *SearchExpenseTable;
+	TButton *Delete;
+	TButton *Change;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label1;
+	TLabel *Label5;
+	TLabel *Label4;
+	TEdit *Edit1;
+	TDateTimePicker *DateTimePicker1;
+	TComboBox *ComboBox1;
+	TEdit *Edit2;
+	TButton *Search;
+	TEdit *Edit3;
+	TTimer *Timer1;
+	void __fastcall ChangeClick(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFindExpense(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFindExpense *FindExpense;
+//---------------------------------------------------------------------------
+#endif

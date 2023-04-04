@@ -1,0 +1,4 @@
+#include "ExpenseClass.h"
+extern int numInc;
+extern Income *Incomes;
+extern Income *Temp;

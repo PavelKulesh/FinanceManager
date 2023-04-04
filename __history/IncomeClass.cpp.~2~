@@ -1,0 +1,42 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "IncomeClass.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+Income* Sort1(Income* Arr, int size)
+{
+	int left = 0;
+	int right = numInc-1;
+	int last_swap;
+	while (left<right)
+	{
+		last_swap = 0;
+		for (int i = left; i < right; i++)
+		{
+			if (Incomes[i].Category > Incomes[i+1].Category)
+			{
+				Income TempInc;
+				TempInc = Incomes[i];
+				Incomes[i] = Incomes[i+1];
+				Incomes[i+1] = TempInc;
+				last_swap = i;
+			}
+		}
+		right = last_swap;
+		for (int j = right; j > left; j--)
+		{
+			if (Incomes[j].Category < Incomes[j-1].Category)
+			{
+				Income TempInc;
+				TempInc = Incomes[j];
+				Incomes[j] = Incomes[j-1];
+				Incomes[j-1] = TempInc;
+				last_swap = j;
+			}
+		}
+		left = last_swap;
+	}
+}

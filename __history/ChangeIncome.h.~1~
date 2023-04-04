@@ -1,0 +1,21 @@
+//---------------------------------------------------------------------------
+
+#ifndef ChangeIncomeH
+#define ChangeIncomeH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+//---------------------------------------------------------------------------
+class TEditIncome : public TForm
+{
+__published:	// IDE-managed Components
+private:	// User declarations
+public:		// User declarations
+	__fastcall TEditIncome(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TEditIncome *EditIncome;
+//---------------------------------------------------------------------------
+#endif

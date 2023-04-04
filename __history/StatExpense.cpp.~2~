@@ -1,0 +1,54 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "StatExpense.h"
+#include "Ext.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TStatisticsExpense *StatisticsExpense;
+int y1 = 0, y2 = 0, y3 = 0, y4 = 0, y5 = 0, y6 = 0;
+//---------------------------------------------------------------------------
+__fastcall TStatisticsExpense::TStatisticsExpense(TComponent* Owner)
+	: TForm(Owner)
+{
+	for (int i = 0; i < numExp; i++)
+	{
+		if (Expenses[i].Category == "Продукты")
+		{
+			y1+=StrToInt(Expenses[i].Sum);
+		}
+		if (Expenses[i].Category == "Коммунальные услуги")
+		{
+			y2+=StrToInt(Expenses[i].Sum);
+		}
+		if (Expenses[i].Category == "Одежда")
+		{
+			y3+=StrToInt(Expenses[i].Sum);
+		}
+		if (Expenses[i].Category == "Учёба")
+		{
+			y4+=StrToInt(Expenses[i].Sum);
+		}
+		if (Expenses[i].Category == "Здоровье")
+		{
+			y5+=StrToInt(Expenses[i].Sum);
+		}
+		if (Expenses[i].Category == "Прочее" || Expenses[i].Category == "Автомобиль" || Expenses[i].Category == "Транспорт" || Expenses[i].Category == "Еда для питомцев" || Expenses[i].Category == "Техника" || Expenses[i].Category == "Бытовая техника" || Expenses[i].Category == "Мебель" || Expenses[i].Category == "Отдых" || Expenses[i].Category == "Спорт" || Expenses[i].Category == "Развлечения" || Expenses[i].Category == "Транспорт" || Expenses[i].Category == "Банк" || Expenses[i].Category == "Долги")
+		{
+			y6+=StrToInt(Expenses[i].Sum);
+		}
+	}
+	Series1->Clear();
+	Series1->Add(y1, "Продукты", clRed);
+	Series1->Add(y2, "Коммунальные услуги", clYellow);
+	Series1->Add(y3, "Одежда", clBlue);
+	Series1->Add(y4, "Учёба", clPurple);
+	Series1->Add(y5, "Здоровье", clWhite);
+	Series1->Add(y6, "Прочее", clBlack);
+}
+//---------------------------------------------------------------------------
+
+

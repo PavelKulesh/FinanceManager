@@ -1,0 +1,42 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "SearchExpense.h"
+#include "ChangeExpense.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFindExpense *FindExpense;
+//---------------------------------------------------------------------------
+__fastcall TFindExpense::TFindExpense(TComponent* Owner)
+	: TForm(Owner)
+{
+	SearchExpenseTable->Cells[0][0] = "Категория";
+	SearchExpenseTable->Cells[1][0] = "Наименование";
+	SearchExpenseTable->Cells[2][0] = "Стоимость(BYN)";
+	SearchExpenseTable->Cells[3][0] = "Дата";
+	SearchExpenseTable->Cells[4][0] = "Комментарий";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFindExpense::ChangeClick(TObject *Sender)
+{
+	EditExpense->Show();
+	Timer1->Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFindExpense::Timer1Timer(TObject *Sender)
+{
+	if (EditExpense->Active == false)
+	{
+		FindExpense->Enabled = true;
+		FindExpense->Show();
+		Timer1->Enabled = false;
+	}
+	else
+		FindExpense->Enabled = false;
+}
+//---------------------------------------------------------------------------
+

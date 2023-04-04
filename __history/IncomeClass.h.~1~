@@ -1,0 +1,15 @@
+//---------------------------------------------------------------------------
+
+#ifndef IncomeClassH
+#define IncomeClassH
+//---------------------------------------------------------------------------
+#endif
+
+class Income
+{
+	public:
+	String Category;
+	Srring Name;
+	String Sum;
+    Date Da
+};
